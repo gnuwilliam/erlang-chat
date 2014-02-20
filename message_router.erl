@@ -1,5 +1,7 @@
 -module(message_router).
 
+-define(SERVER, message_router).
+
 -compile(export_all).
 
 start(PrintFunction) ->
