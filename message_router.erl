@@ -5,6 +5,9 @@
 start() ->
   spawn(message_router, route_messages, []).
 
+stop(RouterPid) ->
+  RouterPid ! shutdown.
+
 route_messages() ->
   receive
     { send_chat_msg, Addressee, MessageBody } ->
