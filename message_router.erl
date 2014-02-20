@@ -2,6 +2,9 @@
 
 -compile(export_all).
 
+start() ->
+  spawn(message_router, route_messages, []).
+
 route_messages() ->
   receive
     { send_chat_msg, Addressee, MessageBody } ->
