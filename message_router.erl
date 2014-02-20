@@ -3,7 +3,7 @@
 -compile(export_all).
 
 start(PrintFunction) ->
-  spawn(message_router, route_messages, []).
+  spawn(message_router, route_messages, [PrintFunction]).
 
 stop(RouterPid) ->
   RouterPid ! shutdown.
