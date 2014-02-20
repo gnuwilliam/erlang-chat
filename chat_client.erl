@@ -3,4 +3,4 @@
 -compile(export_all).
 
 send_message(RouterPid, Addressee, MessageBody) ->
-  RouterPid ! { send_chat_msg, Addressee, MessageBody }.
+  message_router:send_chat_message(RouterPid, Addressee, MessageBody).
